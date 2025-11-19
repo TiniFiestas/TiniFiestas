@@ -1,1 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Profesional</title>
+    <style>
+        /* --------- ESTILOS GENERALES --------- */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            color: #222;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.6);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+        }
+
+        header a:hover {
+            color: #00c3ff;
+        }
+
+        /* --------- INICIO --------- */
+        .hero {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=60') no-repeat center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+        }
+        .hero h2 {
+            font-size: 1.7rem;
+            margin-bottom: 25px;
+        }
+
+        .hero button {
+            background: #00c3ff;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero button:hover {
+            background: #0097c9;
+        }
+
+        /* --------- SOBRE MÍ --------- */
+        #sobre-mi {
+            padding: 80px 10%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .about-img img {
+            width: 260px;
+            border-radius: 50%;
+        }
+
+        .about-text {
+            max-width: 500px;
+        }
+
+        .skills li {
+            margin-bottom: 6px;
+        }
+
+        /* --------- PORTAFOLIO --------- */
+        #portafolio {
+            background: #f6f6f6;
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .projects {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100%;
+        }
+
+        .project-card h3 {
+            margin: 15px 0 5px;
+        }
+
+        .project-card p {
+            padding: 0 15px 15px;
+            font-size: 0.95rem;
+        }
+
+        .project-card a {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #00c3ff;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .project-card a:hover {
+            background: #0097c9;
+        }
+
+        /* --------- CONTACTO --------- */
+        #contacto {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: auto;
+            text-align: left;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        form button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 12px;
+            background: #00c3ff;
+            border: none;
+            color: white;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #0097c9;
+        }
+
+        /* --------- FOOTER --------- */
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social img {
+            width: 30px;
+            margin: 0 10px;
+            filter: invert(1);
+            cursor: pointer;
+        }
+
+        /* --------- RESPONSIVE --------- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.4rem; }
+            .hero h2 { font-size: 1.3rem; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- --------- HEADER --------- -->
+    <header>
+        <h2 style="color:white;">Mi Portfolio</h2>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#portafolio">Portafolio</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- --------- INICIO --------- -->
+    <section class="hero" id="inicio">
+        <h1>Tu Nombre Aquí</h1>
+        <h2>Desarrollador Web | Diseñador | Freelancer</h2>
+        <button onclick="location.href='#portafolio'">Ver Portafolio</button>
+    </section>
+
+    <!-- --------- SOBRE MÍ --------- -->
+    <section id="sobre-mi">
+        <div class="about-img">
+            <img src="https://via.placeholder.com/260" alt="Foto personal">
+        </div>
+        <div class="about-text">
+            <h2>Sobre mí</h2>
+            <p>Soy un profesional apasionado por la tecnología, el diseño y la creación de soluciones digitales modernas. Me especializo en desarrollo web y me encanta aprender nuevas herramientas.</p>
+            <h3>Habilidades</h3>
+            <ul class="skills">
+                <li>✔ HTML, CSS y JavaScript</li>
+                <li>✔ Responsive Design</li>
+                <li>✔ UX/UI básico</li>
+                <li>✔ Git y GitHub</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- --------- PORTAFOLIO --------- -->
+    <section id="portafolio">
+        <h2>Mis Proyectos</h2>
+        <div class="projects">
+
+            <!-- Proyecto 1 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="Proyecto 1">
+                <h3>Proyecto 1</h3>
+                <p>Descripción breve del proyecto, tecnologías usadas y objetivo principal.</p>
+                <a href="#">Ver más</a>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="Proyecto 2">
+                <h3>Proyecto 2</h3>
+                <p>Descripción breve del proyecto, tecnologías usadas y objetivo principal.</p>
+                <a href="#">Ver más</a>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="Proyecto 3">
+                <h3>Proyecto 3</h3>
+                <p>Descripción breve del proyecto, tecnologías usadas y objetivo principal.</p>
+                <a href="#">Ver más</a>
+            </div>
+
+            <!-- Proyecto 4 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="Proyecto 4">
+                <h3>Proyecto 4</h3>
+                <p>Descripción breve del proyecto, tecnologías usadas y objetivo principal.</p>
+                <a href="#">Ver más</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- --------- CONTACTO --------- -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form>
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre" required>
+
+            <label>Correo</label>
+            <input type="email" placeholder="Tu correo" required>
+
+            <label>Mensaje</label>
+            <textarea rows="6" placeholder="Escribe tu mensaje..." required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div class="social" style="margin-top:25px;">
+            <a><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Facebook"></a>
+            <a><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+            <a><img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn"></a>
+        </div>
+    </section>
+
+    <!-- --------- FOOTER --------- -->
+    <footer>
+        © 2025 Tu Nombre – Todos los derechos reservados.
+    </footer>
+
+</body>
+</html>
 
