@@ -128,23 +128,42 @@
         }
 
         .project-card p {
-            padding: 0 15px 15px;
+            padding: 0 15px;
             font-size: 0.95rem;
         }
 
         .project-card a {
             display: inline-block;
-            margin-bottom: 20px;
+            margin: 15px 0 20px;
             padding: 10px 20px;
             background: #00c3ff;
             color: white;
             border-radius: 5px;
             text-decoration: none;
             transition: 0.3s;
+            cursor: pointer;
         }
 
         .project-card a:hover {
             background: #0097c9;
+        }
+
+        /* ----- DESPLEGABLE DE PROYECTOS ----- */
+        .more-info {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 15px;
+            background: #fafafa;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .more-info.open {
+            padding: 15px;
+            max-height: 300px;
+        }
+
+        .project-card a.toggle-btn {
+            cursor: pointer;
         }
 
         /* --------- CONTACTO --------- */
@@ -254,7 +273,12 @@
                 <img src="https://via.placeholder.com/400x250" alt="Proyecto 1">
                 <h3>Proyecto 1</h3>
                 <p>Descripción breve del proyecto, tecnologías usadas y objetivo principal.</p>
-                <a href="#">Ver más</a>
+
+                <div class="more-info">
+                    <p>Aquí puedes incluir más detalles del proyecto: funciones, retos, herramientas, capturas, etc.</p>
+                </div>
+
+                <a class="toggle-btn">Ver más</a>
             </div>
 
             <!-- Proyecto 2 -->
@@ -262,7 +286,12 @@
                 <img src="https://via.placeholder.com/400x250" alt="Proyecto 2">
                 <h3>Proyecto 2</h3>
                 <p>Descripción breve del proyecto, tecnologías usadas y objetivo principal.</p>
-                <a href="#">Ver más</a>
+
+                <div class="more-info">
+                    <p>Detalles extendidos del proyecto 2, explicando desarrollo, tecnologías y aprendizajes.</p>
+                </div>
+
+                <a class="toggle-btn">Ver más</a>
             </div>
 
             <!-- Proyecto 3 -->
@@ -270,7 +299,12 @@
                 <img src="https://via.placeholder.com/400x250" alt="Proyecto 3">
                 <h3>Proyecto 3</h3>
                 <p>Descripción breve del proyecto, tecnologías usadas y objetivo principal.</p>
-                <a href="#">Ver más</a>
+
+                <div class="more-info">
+                    <p>Información adicional del proyecto 3, incluyendo ideas, prototipos y mejoras futuras.</p>
+                </div>
+
+                <a class="toggle-btn">Ver más</a>
             </div>
 
             <!-- Proyecto 4 -->
@@ -278,7 +312,12 @@
                 <img src="https://via.placeholder.com/400x250" alt="Proyecto 4">
                 <h3>Proyecto 4</h3>
                 <p>Descripción breve del proyecto, tecnologías usadas y objetivo principal.</p>
-                <a href="#">Ver más</a>
+
+                <div class="more-info">
+                    <p>Información ampliada sobre el proyecto 4 con detalles técnicos y resultado final.</p>
+                </div>
+
+                <a class="toggle-btn">Ver más</a>
             </div>
 
         </div>
@@ -312,6 +351,19 @@
         © 2025 Tu Nombre – Todos los derechos reservados.
     </footer>
 
+    <!-- --------- SCRIPT VER MÁS --------- -->
+    <script>
+        document.querySelectorAll(".toggle-btn").forEach(boton => {
+            boton.addEventListener("click", function() {
+                const moreInfo = this.previousElementSibling;
+                moreInfo.classList.toggle("open");
+
+                this.textContent = moreInfo.classList.contains("open")
+                    ? "Ver menos"
+                    : "Ver más";
+            });
+        });
+    </script>
+
 </body>
 </html>
-
